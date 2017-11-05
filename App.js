@@ -56,7 +56,7 @@ app.get('/db/addRecord', function(req,res){
 app.post('/db/addFeedback', function(req,res){
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
-    //console.log('in app.js');
+    console.log('in app.js');
     dbOperations.addFeedback(req,res);
      
 
