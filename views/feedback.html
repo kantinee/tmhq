@@ -303,6 +303,26 @@
             myApp.controller('postgreSQLCtrl', ['$scope' ,'$http',  function($scope,$http) {
                 $scope.val1 = 'This is temp Val' ;  
                 $scope.fName = '';
+                $scope.sex= '';
+                $scope.age= '';
+                $scope.edu= '';
+                $scope.job= '';
+                $scope.email= '';
+                $scope.qcb1= '';
+                $scope.qcb2= '';
+                $scope.qcb3= '';
+                $scope.qcb4= '';
+                $scope.goodcb= '';
+                $scope.badcb= '';
+                $scope.qq1= '';
+                $scope.qq2= '';
+                $scope.qq3= '';
+                $scope.qq4= '';
+                $scope.goodq= '';
+                $scope.badq= '';
+                $scope.qa1= '';
+                $scope.qa2= '';
+                $scope.qacomment= '';
                    
                 $scope.getAllRec = function(){ 
                     $http({method: 'GET', url: '/db/readRecords'}).
@@ -318,7 +338,25 @@
                 
                 $scope.addRecord = function(){ 
                     var url = '/db/addFeedback';
-                    var xdata = {age: $scope.age, fName: val};
+                    var xdata = {age: $scope.age, fName: val,sex: $scope.sex,
+                                    edu: $scope.edu,
+                                    job: $scope.job,
+                                    email: $scope.email,
+                                    qcb1: $scope.qcb1,
+                                    qcb2: $scope.qcb2,
+                                    qcb3: $scope.qcb3,
+                                    qcb4: $scope.qcb4,
+                                    goodcb: $scope.goodcb,
+                                    badcb: $scope.badcb,
+                                    qq1: $scope.qq1,
+                                    qq2: $scope.qq2,
+                                    qq3: $scope.qq3,
+                                    qq4: $scope.qq4,
+                                    goodq: $scope.goodq,
+                                    badq: $scope.badq,
+                                    qa1: $scope.qa1,
+                                    qa2: $scope.qa2,
+                                    qacomment: $scope.qacomment };
                     //alert($scope.age);
                     //alert(val)
                     //alert(xdata)
