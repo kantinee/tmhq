@@ -57,14 +57,22 @@ module.exports = {
     
         query.on("end", function (result) {          
             client.end(); 
-            res.write('Success');
+            //res.write('Success');
+            var dname = 0;
+            dname = req.query.fName.length % 2;
+            console.log('dname='+dname);
+            if (dname === 0)
+                res.redirect('/feedback/'+req.query.fName);
+            else 
+                res.redirect('https://m.me/JubjaiBot');
+
             /*var dname = 0;
             dname = req.query.fName.length % 2;
             if (dname == 0)
                 res.redirect('/feedback.html?fbid='+req.query.fName);
             else 
                 res.redirect('https://m.me/JubjaiBot');*/
-            res.end();  
+            //res.end();  
         });
 
     },

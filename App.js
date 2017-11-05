@@ -28,8 +28,8 @@ app.get('/feedback/:fbid' , function(req,res) {
     console.log('inside /app.js-'+ req.params.fbid);
     // parse URL    
     //console.log(req);
-    res.setHeader("Content-Type", "text/html");
-    res.sendfile('https://tmhq-jubjai.herokuapp.com/feedback.html?fbid='+req.params.fbid);  //change here
+    //res.setHeader("Content-Type", "text/html");
+    res.redirect('https://tmhq-jubjai.herokuapp.com/feedback.html?fbid='+req.params.fbid);  //change here
 
 } );
 
@@ -48,14 +48,9 @@ app.get('/db/readRecords', function(req,res){
 });
 
 app.get('/db/addRecord', function(req,res){
-    dbOperations.addRecord(req,res);
-    var dname = 0;
-    dname = req.query.fName.length % 2;
-    console.log('dname='+dname);
-    if (dname === 0)
-        res.redirect('/feedback/'+req.query.fName);
-    else 
-        res.sendfile('https://m.me/JubjaiBot');
+    dbOperations.addRecord(req,res)
+        
+   
 });
 
 app.get('/db/delRecord', function(req,res){
