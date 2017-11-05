@@ -48,7 +48,7 @@ app.get('/db/readRecords', function(req,res){
 });
 
 app.get('/db/addRecord', function(req,res){
-    dbOperations.addRecord(req,res)
+    dbOperations.addRecord(req,res);
         
    
 });
