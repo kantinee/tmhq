@@ -266,7 +266,15 @@
                                 //alert('Record Added');
                                 //alert('/db/addRecord?fName='+$scope.fName+'&lName='+$scope.lName+'&email='+$scope.email+'&mbl='+$scope.mbl+'&q1='+$scope.q1+'&q2='+$scope.q2)
                                 //$scope.getAllRec();
-                                $http({method: 'GET', url: '/thankyou'}) //change here
+                                //$http({method: 'GET', url: '/thankyou'}) //error here
+                                var dname = 0;
+                                dname = val.length % 2;
+                                if (dname == 0){
+                                    alert('forward feedback')
+                                    $http({method: 'GET', url: '/feedback/'+ val })}
+                                else {
+                                    alert('forward JubjaiBot')
+                                    $http({method: 'GET', url: '/JubjaiBot'}); }
                         });  
                 }
                 

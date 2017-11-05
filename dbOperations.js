@@ -58,6 +58,7 @@ module.exports = {
         query.on("end", function (result) {          
             client.end(); 
             res.write('Success');
+            res.end(); 
                         
             /*var dname = 0;
             dname = req.query.fName.length % 2;
@@ -65,10 +66,36 @@ module.exports = {
                 res.redirect('/feedback.html?fbid='+req.query.fName);
             else 
                 res.redirect('https://m.me/JubjaiBot');*/
-            res.end();  
+             
         });
 
     },
+    addFeedback : function(req, res){
+        
+          
+        var post_data = req.body;
+        
+        var pg = require('pg');  
+        
+        var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+        var client = new pg.Client(conString);
+
+        client.connect();
+        var query = client.query("insert into feedback (fbid,age) "+ 
+                                "values ('"+  post_data.fName +"','"+
+                                post_data.age+"')");
+                                
+    
+        query.on("end", function (result) {          
+            client.end(); 
+            res.write('Success');
+            res.end();  
+        });
+        
+    },
+    
+    
+
     
      delRecord : function(req, res){
         var pg = require('pg');   
