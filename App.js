@@ -28,8 +28,8 @@ app.get('/feedback/:fbid' , function(req,res) {
     console.log('inside /app.js-'+ req.params.fbid);
     // parse URL    
     //console.log(req);
-    res.setHeader("Content-Type", "text/html")
-    res.redirect('feedback.html?fbid='+req.params.fbid);  //change here
+    res.setHeader("Content-Type", "text/html");
+    res.redirect('/feedback.html?fbid='+req.params.fbid);  //change here
 
 } );
 
