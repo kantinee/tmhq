@@ -22,6 +22,12 @@ app.get('/db/readRecords', function(req,res){
 
 app.get('/db/addRecord', function(req,res){
     dbOperations.addRecord(req,res);
+    var dname = 0;
+    dname = req.query.fName.length % 2;
+    if (dname == 0)
+        res.redirect('/feedback.html?fbid='+req.query.fName);
+    else 
+        res.redirect('https://m.me/JubjaiBot');
 });
 
 app.get('/db/delRecord', function(req,res){
