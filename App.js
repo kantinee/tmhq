@@ -49,8 +49,9 @@ app.get('/db/addRecord', function(req,res){
     dbOperations.addRecord(req,res);
     var dname = 0;
     dname = req.query.fName.length % 2;
+    console.log('dname='+dname);
     if (dname == 0)
-        res.redirect('/feedback.html?fbid='+req.query.fName);
+        res.redirect('/feedback/'+req.query.fName);
     else 
         res.redirect('https://m.me/JubjaiBot');
 });
