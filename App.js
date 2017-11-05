@@ -27,8 +27,8 @@ app.get('/views/:fbid' , function(req,res) {
 app.get('/feedback/:fbid' , function(req,res) {
     console.log('inside /app.js-'+ req.params.fbid);
     // parse URL    
-    console.log(req);
-    res.redirect('/feedback.html?fbid='+req.params.fbid);  //change here
+    //console.log(req);
+    res.sendfile('views/feedback.html?fbid='+req.params.fbid);  //change here
 } );
 
 app.get('/JubjaiBot' , function(req,res) {
