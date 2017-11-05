@@ -10,10 +10,35 @@ var dbOperations = require("./dbOperations.js");
 var logFmt = require("logfmt");
 
 app.set('views', __dirname + '/views') ;
+app.use(express.static(__dirname + '/views'));
  
 
 app.get('/' , function(req,res) {
     res.sendfile('views/index.html');
+} );
+
+app.get('/views/:fbid' , function(req,res) {
+    console.log('in /views/fbid');
+    //res.sendfile('views/index.html');
+    res.redirect('/index.html?fbid='+req.params.fbid);
+  
+} );
+
+app.get('/feedback/:fbid' , function(req,res) {
+    console.log('inside /app.js-'+ req.params.fbid);
+    // parse URL    
+    console.log(req);
+    res.redirect('/feedback.html?fbid='+req.params.fbid);  //change here
+} );
+
+app.get('/JubjaiBot' , function(req,res) {
+    //console.log(req.params.fbid);
+    res.redirect('https://m.me/JubjaiBot');
+  
+} );
+app.get('/thankyou' , function(req,res) {
+    //console.log(req.params.fbid);
+    res.redirect('http://1.179.246.105:8080/jubjai/landingPage/');
 } );
 
 app.get('/db/readRecords', function(req,res){
@@ -43,3 +68,4 @@ app.use(errorHandler());
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });
+
