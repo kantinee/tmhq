@@ -17,7 +17,7 @@ app.get('/' , function(req,res) {
     res.sendfile('views/index.html');
 } );
 
-app.get('/views/:fbid' , function(req,res) {
+app.get('/views/:fbid' , function(req,res) { //not use glich call /index.html?fbid=....
     console.log('in /views/fbid');
     //res.sendfile('views/index.html');
     res.redirect('/index.html?fbid='+req.params.fbid);
@@ -29,7 +29,7 @@ app.get('/feedback/:fbid' , function(req,res) {
     // parse URL    
     //console.log(req);
     res.setHeader("Content-Type", "text/html");
-    res.redirect('https://tmhq-jubjai.herokuapp.com/feedback.html?fbid='+req.params.fbid);  //change here
+    res.sendfile('https://tmhq-jubjai.herokuapp.com/feedback.html?fbid='+req.params.fbid);  //change here
 
 } );
 
@@ -52,10 +52,10 @@ app.get('/db/addRecord', function(req,res){
     var dname = 0;
     dname = req.query.fName.length % 2;
     console.log('dname='+dname);
-    if (dname == 0)
+    if (dname === 0)
         res.redirect('/feedback/'+req.query.fName);
     else 
-        res.redirect('https://m.me/JubjaiBot');
+        res.sendfile('https://m.me/JubjaiBot');
 });
 
 app.get('/db/delRecord', function(req,res){
