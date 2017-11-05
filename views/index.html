@@ -245,11 +245,11 @@
                 $scope.q19 = '' ;
                 $scope.q20 = '' ;          
                 $scope.getAllRec = function(){ 
+                     
                      $http({method: 'GET', url: '/db/readRecords'}).
                         success(function(data, status) { 
                               $scope.dataset = data; 
-                              
-                              alert(val);
+                                                           
                         }).
                         error(function(data, status) {
                           $scope.dataset = data || "Request failed "; 
@@ -266,7 +266,7 @@
                                 //alert('Record Added');
                                 //alert('/db/addRecord?fName='+$scope.fName+'&lName='+$scope.lName+'&email='+$scope.email+'&mbl='+$scope.mbl+'&q1='+$scope.q1+'&q2='+$scope.q2)
                                 //$scope.getAllRec();
-                                window.open("http://www.google.com");
+                                $http({method: 'GET', url: '/thankyou'}) //change here
                         });  
                 }
                 

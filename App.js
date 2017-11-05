@@ -13,19 +13,19 @@ app.set('views', __dirname + '/views') ;
 app.use(express.static(__dirname + '/views'));
  
 
-app.get('/' , function(req,res) {
+app.get('/' , function(req,res) {  //not use just for test site url
     res.sendfile('views/index.html');
 } );
 
 app.get('/views/:fbid' , function(req,res) { //not use glich call /index.html?fbid=....
-    console.log('in /views/fbid');
+    //console.log('in /views/fbid');
     //res.sendfile('views/index.html');
     res.redirect('/index.html?fbid='+req.params.fbid);
-  
 } );
 
+
 app.get('/feedback/:fbid' , function(req,res) {
-    console.log('inside /app.js-'+ req.params.fbid);
+    //console.log('inside /app.js-'+ req.params.fbid);
     // parse URL    
     //console.log(req);
     //res.setHeader("Content-Type", "text/html");
@@ -33,12 +33,12 @@ app.get('/feedback/:fbid' , function(req,res) {
 
 } );
 
-app.get('/JubjaiBot' , function(req,res) {
+app.get('/JubjaiBot' , function(req,res) { //test ok
     //console.log(req.params.fbid);
     res.redirect('https://m.me/JubjaiBot');
   
 } );
-app.get('/thankyou' , function(req,res) {
+app.get('/thankyou' , function(req,res) { //test ok
     //console.log(req.params.fbid);
     res.redirect('http://1.179.246.105:8080/jubjai/landingPage/');
 } );
