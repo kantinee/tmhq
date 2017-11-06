@@ -52,7 +52,7 @@ app.get('/db/addRecord', function(req,res){
         
    
 });
-
+/*
 app.post('/db/addFeedback', function(req,res){
     //app.use(bodyParser.urlencoded({ extended: false }));
     //app.use(bodyParser.json());
@@ -60,8 +60,57 @@ app.post('/db/addFeedback', function(req,res){
     //console.log('in app.js: %j ',req);
     //dbOperations.addFeedback(req,res);
     //console.log('out app.js' + res);
+    
 
-});
+});*/
+
+app.post('/db/addFeedback', function (req, res, next) {
+    user = req.body;
+    var pg = require('pg');
+    var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+    pg.connect(conString, function (err, client, done) {
+      if (err) {
+        // pass the error to the express error handler
+        return next(err);
+      }
+      client.query('INSERT INTO feedback (fbid,age) VALUES ($1, $2);', [user.fname, user.age], function (err, result) {
+        done(); //this done callback signals the pg driver that the connection can be closed or returned to the connection pool
+  
+        if (err) {
+          // pass the error to the express error handler
+          return next(err);
+        }
+  
+        res.send(200);
+      });
+    });
+  });
+/*
+  console.write("in dbOperation addFeedback");
+  
+  var post_data = req.body;
+  var pg = require('pg');  
+  
+var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";  
+  //var conString = process.env.DATABASE_URL;
+  var client = new pg.Client(conString);
+
+  client.connect();
+  //var query = client.query("insert into feedback (fbid,age,sex,edu,job,email,qcb1,qcb2,qcb3,qcb4,goodcb,badcb,qq1,qq2,qq3,qq4,goodq,badq,qa1,qa2,qacomment) "+ 
+  //                        "values ('"+  post_data.fName +"','" + post_data.age +"','" + post_data.sex +"','" + post_data.edu+"','" + post_data.job+"','" + post_data.email+"','" + post_data.qcb1+"','" + post_data.qcb2+"','" + post_data.qcb3+"','" + post_data.qcb4+"','" + post_data.goodcb+"','" + post_data.badcb+"','" + post_data.qq1+"','" + post_data.qq2+"','" + post_data.qq3+"','" + post_data.qq4+"','" + post_data.goodq+"','" + post_data.badq+"','" + post_data.qa1+"','" + post_data.qa2+"','" + post_data.qacomment   +"')");
+  var query = client.query("insert into feedback (fbid,age) "+ 
+                          "values ('"+  post_data.fName +"','"+
+                          post_data.age+"')");
+                          
+  query.on("end", function (result) {   
+      //console.write(result);       
+      client.end(); 
+      res.write('Success');
+      res.end();  
+  }
+);*/
+  
+
 
 app.get('/db/delRecord', function(req,res){
     dbOperations.delRecord(req,res);
