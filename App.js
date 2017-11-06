@@ -4,7 +4,16 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     errorHandler = require('express-error-handler'),
     app = express();
-
+    
+    
+    // for parsing application/json
+    app.use(bodyParser.json());
+    
+    // for parsing application/x-www-form-urlencoded
+    app.use(bodyParser.urlencoded({ extended: true }));
+    
+    // for parsing multipart/form-data
+    app.use(multer());
  
 var dbOperations = require("./dbOperations.js");
 var logFmt = require("logfmt");
@@ -65,11 +74,12 @@ app.post('/db/addFeedback', function(req,res){
 });*/
 
 app.post('/db/addFeedback', function (req, res, next) {
-    app.use(bodyParser.urlencoded({ extended: false }));
-    app.use(bodyParser.json());
-    console.write(JSON.stringify(req));
+    
+    
+    
     var post_data = req.body;
-    //console.write(JSON.stringify(post_data));
+
+    console.log(JSON.stringify(post_data));
     
     var pg = require('pg');
     var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
