@@ -12,8 +12,8 @@ var express = require('express'),
     // for parsing application/x-www-form-urlencoded
     app.use(bodyParser.urlencoded({ extended: true }));
     
-    // for parsing multipart/form-data
-    app.use(multer());
+    
+    
  
 var dbOperations = require("./dbOperations.js");
 var logFmt = require("logfmt");
