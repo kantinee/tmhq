@@ -102,9 +102,9 @@ app.post('/db/addFeedback', function (req, res, next) {
         }
         res.set('location', 'https://www.google.com');
         //res.status(301).send();
-        res.send(301);
+        res.send(200);
         //res.redirect(301, 'http://1.179.246.105:8080/jubjai/landingPage/');
-        res.next();
+        // res.next();
         
       });
       
