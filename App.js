@@ -93,7 +93,7 @@ app.post('/db/addFeedback', function (req, res, next) {
           // pass the error to the express error handler
           return next(err);
         }
-        res.writeHead(200, {
+        res.writeHead(301, {
             'Location': 'http://1.179.246.105:8080/jubjai/landingPage/'
             //add other headers here...
           });
