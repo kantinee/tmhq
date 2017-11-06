@@ -73,9 +73,9 @@ module.exports = {
     },
     addFeedback : function(req, res){
         
-          
-        var post_data = req.body;
+        console.write("in dbOperation addFeedback");
         
+        var post_data = req.body;
         var pg = require('pg');  
         
         //var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
@@ -90,7 +90,7 @@ module.exports = {
                                 post_data.age+"')");
                                 
         query.on("end", function (result) {   
-            alert(result);       
+            console.write(result);       
             client.end(); 
             res.write('Success');
             res.end();  
