@@ -29,7 +29,7 @@ app.get('/feedback/:fbid' , function(req,res) {
     // parse URL    
     //console.log(req);
     //res.setHeader("Content-Type", "text/html");
-    res.redirect('https://tmhq-jubjai.herokuapp.com/feedback.html?fbid='+req.params.fbid);  //change here
+    res.redirect('/feedback.html?fbid='+req.params.fbid);  //change here
 
 } );
 

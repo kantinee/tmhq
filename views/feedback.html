@@ -338,8 +338,7 @@
                 
                 $scope.addRecord = function(){ 
                     var url = '/db/addFeedback';
-                    var xdata = {age: $scope.age, fName: val,sex: $scope.sex,
-                                    edu: $scope.edu,
+                    var xdata = {age: $scope.age, fName: val,sex: $scope.sex,edu: $scope.edu,
                                     job: $scope.job,
                                     email: $scope.email,
                                     qcb1: $scope.qcb1,
@@ -357,9 +356,9 @@
                                     qa1: $scope.qa1,
                                     qa2: $scope.qa2,
                                     qacomment: $scope.qacomment };
-                    //alert($scope.age);
-                    //alert(val)
-                    //alert(xdata)
+                    alert($scope.age);
+                    alert(val)
+                    alert($scope.sex)
                     $http.post(url,xdata).
                         success(function(data, status) { 
                                 alert('Record Added');
