@@ -75,7 +75,7 @@ app.post('/db/addFeedback', function (req, res, next) {
         // pass the error to the express error handler
         return next(err);
       }
-      client.query('INSERT INTO feedback (fbid,age) VALUES ($1, $2::string);', [post_data.fName, post_data.age], function (err, result) {
+      client.query('INSERT INTO feedback (fbid,age) VALUES ($1, $2);', [req.body.fbid, post_data.age], function (err, result) {
         done(); //this done callback signals the pg driver that the connection can be closed or returned to the connection pool
   
         if (err) {
