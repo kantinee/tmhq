@@ -66,6 +66,8 @@ app.post('/db/addFeedback', function(req,res){
 
 app.post('/db/addFeedback', function (req, res, next) {
     var post_data = req.body;
+    console.write(JSON.stringify(post_data));
+    
     var pg = require('pg');
     var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
     pg.connect(conString, function (err, client, done) {
