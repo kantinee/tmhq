@@ -65,6 +65,8 @@ app.post('/db/addFeedback', function(req,res){
 });*/
 
 app.post('/db/addFeedback', function (req, res, next) {
+    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.json());
     var post_data = req.body;
     //console.write(JSON.stringify(post_data));
     
