@@ -78,7 +78,8 @@ module.exports = {
         
         var pg = require('pg');  
         
-        var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+        //var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+        var conString = process.env.DATABASE_URL;
         var client = new pg.Client(conString);
 
         client.connect();

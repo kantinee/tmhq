@@ -301,9 +301,9 @@
             var myApp = angular.module('postgreSQL',[ ]);  
             var val = window.location.href.toString().split('=')[1];            
             myApp.controller('postgreSQLCtrl', ['$scope' ,'$http',  function($scope,$http) {
-            /*    $scope.val1 = 'This is temp Val' ;  
+                $scope.val1 = 'This is temp Val' ;  
                 $scope.fName = '';
-                $scope.sex= '';
+            /*    $scope.sex= '';
                 $scope.age= '';
                 $scope.edu= '';
                 $scope.job= '';
@@ -359,18 +359,17 @@
                                     qa2: $scope.qa2,
                                     qacomment: $scope.qacomment };
                     */
-                    alert('ying'+ JSON.stringify(xdata));
-                    //console.log("Session: %j", session);
                     $http.post(url,xdata).
                         success(function(data, status) { 
                                 alert('Record Added');
                                 //alert('/db/addRecord?fName='+$scope.fName+'&lName='+$scope.lName+'&email='+$scope.email+'&mbl='+$scope.mbl+'&q1='+$scope.q1+'&q2='+$scope.q2)
                                 //$scope.getAllRec();       
-                                $http({method: 'GET', url: '/thankyou'});                          
+                                //$http({method: 'GET', url: '/thankyou'});                          
                         }).
                         error(function(data,status){
                             alert('error:'+status +JSON.stringify(data));    
-
+                            alert('ying'+ JSON.stringify(xdata));
+                    
                         });
                 }
                 
