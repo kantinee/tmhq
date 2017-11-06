@@ -356,9 +356,7 @@
                                     qa1: $scope.qa1,
                                     qa2: $scope.qa2,
                                     qacomment: $scope.qacomment };
-                    alert($scope.age);
-                    alert(val)
-                    alert($scope.sex)
+                    alert(xdata);
                     $http.post(url,xdata).
                         success(function(data, status) { 
                                 alert('Record Added');
