@@ -359,7 +359,7 @@
                                     qa2: $scope.qa2,
                                     qacomment: $scope.qacomment };
                     
-                    //$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+                    //$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded"; got undefined
                     $http.defaults.headers.post["Content-Type"] ="application/json";
                     
                     $http.post('/db/addFeedback',xdata).
