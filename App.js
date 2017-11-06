@@ -45,7 +45,8 @@ app.get('/feedback/:fbid' , function(req,res) {
     // parse URL    
     //console.log(req);
     //res.setHeader("Content-Type", "text/html");
-    res.redirect('/feedback.html?fbid='+req.params.fbid);  //change here
+    //res.redirect(301, 'http://yourotherdomain.com' + req.path)
+    res.redirect(301,'/feedback.html?fbid='+req.params.fbid);  //change here
 
 } );
 
@@ -102,7 +103,7 @@ app.post('/db/addFeedback', function (req, res, next) {
         }
         res.set('location', 'https://www.google.com');
         //res.status(301).send();
-        res.send(200);
+        res.send();
         //res.redirect(301, 'http://1.179.246.105:8080/jubjai/landingPage/');
         // res.next();
         
