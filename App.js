@@ -97,7 +97,10 @@ app.post('/db/addFeedback', function (req, res, next) {
         //res.status(301).send();
         //res.send(200);
         res.redirect("/thankyou");
+        return next();
+        
       });
+      
     });
   });
 /*
