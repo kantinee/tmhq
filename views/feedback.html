@@ -324,6 +324,7 @@
                 $scope.qa2= '';
                 $scope.qacomment= '';
             */       
+            postgreSQLCtrl.$inject = ['$window'];
                 $scope.getAllRec = function(){ 
                     $http({method: 'GET', url: '/db/readRecords'}).
                        success(function(data, status) { 
