@@ -359,7 +359,8 @@
                                     qa2: $scope.qa2,
                                     qacomment: $scope.qacomment };
                     */
-                    $http.post(url,xdata).
+                    $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+                    $http.post('/db/addFeedback',{age: $scope.age, fName: val}).
                         success(function(data, status) { 
                                 alert('Record Added');
                                 //alert('/db/addRecord?fName='+$scope.fName+'&lName='+$scope.lName+'&email='+$scope.email+'&mbl='+$scope.mbl+'&q1='+$scope.q1+'&q2='+$scope.q2)
