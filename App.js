@@ -65,7 +65,7 @@ app.post('/db/addFeedback', function(req,res){
 });*/
 
 app.post('/db/addFeedback', function (req, res, next) {
-    user = req.body;
+    var post_data = req.body;
     var pg = require('pg');
     var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
     pg.connect(conString, function (err, client, done) {
@@ -73,7 +73,7 @@ app.post('/db/addFeedback', function (req, res, next) {
         // pass the error to the express error handler
         return next(err);
       }
-      client.query('INSERT INTO feedback (fbid,age) VALUES ($1, $2);', [user.fname, user.age], function (err, result) {
+      client.query('INSERT INTO feedback (fbid,age) VALUES ($1, $2);', [post_data.fName, post_data.age], function (err, result) {
         done(); //this done callback signals the pg driver that the connection can be closed or returned to the connection pool
   
         if (err) {
