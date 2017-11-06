@@ -75,8 +75,6 @@ module.exports = {
         
           
         var post_data = req.body;
-        res.write("insert into feedback (fbid,age,sex,edu,job,email,qcb1,qcb2,qcb3,qcb4,goodcb,badcb,qq1,qq2,qq3,qq4,goodq,badq,qa1,qa2,qacomment) "+ 
-        "values ('"+  post_data.fName +"','" + post_data.age +"','" + post_data.sex +"','" + post_data.edu+"','" + post_data.job+"','" + post_data.email+"','" + post_data.qcb1+"','" + post_data.qcb2+"','" + post_data.qcb3+"','" + post_data.qcb4+"','" + post_data.goodcb+"','" + post_data.badcb+"','" + post_data.qq1+"','" + post_data.qq2+"','" + post_data.qq3+"','" + post_data.qq4+"','" + post_data.goodq+"','" + post_data.badq+"','" + post_data.qa1+"','" + post_data.qa2+"','" + post_data.qacomment   +"')");
         
         var pg = require('pg');  
         
