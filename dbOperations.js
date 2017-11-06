@@ -88,7 +88,8 @@ module.exports = {
                                 "values ('"+  post_data.fName +"','"+
                                 post_data.age+"')");
                                 
-        query.on("end", function (result) {          
+        query.on("end", function (result) {   
+            alert(result);       
             client.end(); 
             res.write('Success');
             res.end();  
