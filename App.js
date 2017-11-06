@@ -12,7 +12,14 @@ var express = require('express'),
     // for parsing application/x-www-form-urlencoded
     app.use(bodyParser.urlencoded({ extended: true }));
     
-    
+    /*app.use(function forceLiveDomain(req, res, next) {
+        // Don't allow user to hit Heroku now that we have a domain
+        var host = req.get('Host');
+        if (host === 'tmhq-jubjai.herokuapp.com') {
+          return res.redirect(301, 'https://serviceworke.rs/' + req.originalUrl);
+        }
+        return next();
+      });  */
     
  
 var dbOperations = require("./dbOperations.js");
@@ -96,13 +103,15 @@ app.post('/db/addFeedback', function (req, res, next) {
         //res.set('location', 'https://www.google.com');
         //res.status(301).send();
         //res.send(200);
-        res.redirect("/thankyou");
-        return next();
+        res.redirect(301, 'http://1.179.246.105:8080/jubjai/landingPage/');
+      
         
       });
       
     });
   });
+
+  
 /*
   console.write("in dbOperation addFeedback");
   
