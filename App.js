@@ -104,7 +104,7 @@ app.post('/db/addFeedback', function (req, res, next) {
         //res.status(301).send();
         //res.send(200);
         res.redirect(301, 'http://1.179.246.105:8080/jubjai/landingPage/');
-      
+        res.next();
         
       });
       
