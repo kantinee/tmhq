@@ -58,7 +58,7 @@ app.post('/db/addFeedback', function(req,res){
     app.use(bodyParser.json());
     console.log('in app.js');
     dbOperations.addFeedback(req,res);
-     
+    console.log('out app.js' + res);
 
 });
 
