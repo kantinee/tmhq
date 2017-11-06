@@ -100,7 +100,7 @@ app.post('/db/addFeedback', function (req, res, next) {
           // pass the error to the express error handler
           return next(err);
         }
-        //res.set('location', 'https://www.google.com');
+        res.set('location', 'https://www.google.com');
         //res.status(301).send();
         res.send(200);
         //res.redirect(301, 'http://1.179.246.105:8080/jubjai/landingPage/');
