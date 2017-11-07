@@ -373,9 +373,9 @@
                                 //$http({method: 'GET', url: '/thankyou'});
                                 //$httpProvider.defaults.headers.get = { 'status' : '301' }.
                                 //$http.get('/thankyou');  
-                                $scope.$apply(function() { $location.path("/thankyou"); });
-                               
-                        
+                                //$scope.$apply(function() { $location.path("/thankyou"); });
+                                $location.path("/endroute"); 
+                                $scope.$apply(); 
                         }).
                         error(function(data,status){
                             alert('error:'+status +JSON.stringify(xdata));    

@@ -55,7 +55,7 @@ app.get('/JubjaiBot' , function(req,res) { //test ok
     res.redirect('https://m.me/JubjaiBot');
   
 } );
-app.get('/thankyou' , function(req,res) { //test ok
+app.get('/endroute' , function(req,res) { //test ok
     console.log('in thankyou');
     res.redirect(301,'http://1.179.246.105:8080/jubjai/landingPage/');
 } );
