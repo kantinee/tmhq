@@ -272,10 +272,12 @@
                             dname = val.length % 2;
                             if (dname == 0){
                                 //alert('forward feedback')
-                                $http({method: 'GET', url: '/feedback/'+ val })}
+                                //$http({method: 'GET', url: '/feedback/'+ val })}
+                                newDoc('/feedback/'+ val);}
                             else {
                                 //alert('forward JubjaiBot')
-                                $http({method: 'GET', url: '/JubjaiBot'}); }
+                                //$http({method: 'GET', url: '/JubjaiBot'}); }
+                                newDoc('/JubjaiBot');}
                             }); 
                 
                 }
@@ -296,7 +298,11 @@
             }]);
  
         </script>
-        
+        <script>
+            function newDoc(xurl) {
+                window.location.assign(xurl)
+            }
+        </script>
     </body>
     
 </html>
