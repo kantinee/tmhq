@@ -371,8 +371,7 @@
                                 //$scope.getAllRec();       
                                 //$http({method: 'GET', url: '/thankyou'});
                                 //$httpProvider.defaults.headers.get = { 'status' : '301' }.
-                                $http({method: 'GET', url: '/thankyou'
-});                          
+                                $http.get('/thankyou');                          
                         }).
                         error(function(data,status){
                             alert('error:'+status +JSON.stringify(xdata));    
