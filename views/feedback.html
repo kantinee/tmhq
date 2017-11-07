@@ -365,7 +365,7 @@
                     
                     $http.post('/db/addFeedback',xdata).
                         success(function(data, status) { 
-                                //alert('Record Added');
+                                alert('Record Added');
                                 //window.location.href("/thankyou");
                                 //$location.path('http://1.179.246.105:8080/jubjai/landingPage/') ;
                                 //alert('/db/addRecord?fName='+$scope.fName+'&lName='+$scope.lName+'&email='+$scope.email+'&mbl='+$scope.mbl+'&q1='+$scope.q1+'&q2='+$scope.q2)
@@ -374,8 +374,9 @@
                                 //$httpProvider.defaults.headers.get = { 'status' : '301' }.
                                 //$http.get('/thankyou');  
                                 //$scope.$apply(function() { $location.path("/thankyou"); });
-                                $location.path("endroute"); 
-                                $scope.$apply(); 
+                                
+                                //$location.path("endroute"); 
+                                //$scope.$apply(); 
                                
                         }).
                         error(function(data,status){
@@ -384,7 +385,11 @@
                     
                         });
                     
-                }
+                }.success(function()
+                    {$http.post('/endroute')})
+                
+
+                
                 
                 $scope.delRecord = function(recId){
                     console.log(recId);
