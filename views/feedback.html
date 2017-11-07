@@ -323,7 +323,7 @@
                 $scope.qa1= '';
                 $scope.qa2= '';
                 $scope.qacomment= '';
-            */       
+                  
             
                 $scope.getAllRec = function(){ 
                     $http({method: 'GET', url: '/db/readRecords'}).
@@ -335,7 +335,7 @@
                          $scope.dataset = data || "Request failed "; 
                      }); 
                } 
-                      
+               */  
                 
                 $scope.addRecord = function(){ 
                     var url = '/db/addFeedback';
@@ -389,7 +389,7 @@
                 
                 
                 
-                $scope.getAllRec();
+                //$scope.getAllRec();
                 
             }]);
  
