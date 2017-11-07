@@ -99,6 +99,7 @@ app.post('/db/addFeedback', function (req, res, next) {
   
         if (err) {
           // pass the error to the express error handler
+          console.log(err);
           return next(err);
         }
         //res.set('location', 'https://www.google.com');
