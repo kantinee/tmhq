@@ -289,22 +289,9 @@
                                                                                     if ($scope.q17!='')
                                                                                         if ($scope.q18!='')
                                                                                             if ($scope.q19!='')
-                                                                                                if ($scope.q20!=''){
+                                                                                                if ($scope.q20!='')
                                                                                                     $scope.addRecord(); 
-                                                                                                    score = (int($scope.q1)+int($scope.q2)+int($scope.q3)+int($scope.q4)+int($scope.q5)+int($scope.q6)+int($scope.q7)+int($scope.q8)+int($scope.q9)+int($scope.q10)+int($scope.q11)+int($scope.q12)+int($scope.q13)+int($scope.q14)+int($scope.q15)+int($scope.q16)+int($scope.q17)+int($scope.q18)+int($scope.q19)+int($scope.q20))/20;
-                                                                                                    score = Math.round(score * 100) / 100;
-                                                                                                    if (score < 0.20) {
-                                                                                                        score_msg = 'ไม่มีภาวะซึมเศร้า';
-                                                                                                    } else if ((score >= 0.20 ) && (score < 1.09)) {
-                                                                                                        score_msg = 'มีอารมณ์เศร้าบ้าง แต่อยู่ในระดับปกติที่คนทั่วไปก็สามารถรู้สึกเช่นนี้ได้';
-                                                                                                    } else if ((score >= 1.09 ) && (score < 1.38)) {
-                                                                                                        score_msg = 'มีภาวะซึมเศร้าปานกลาง ควรสังเกตอารมณ์ตนเองอย่างใกล้ชิด ถ้าความรู้สึกเช่นนี้คงอยู่ต่อเนื่องไปอีกประมาณ 2 สัปดาห์ หรือเริ่มรู้สึกว่าสภาพอารมณ์รบกวนการทำงานหรือการใช้ชีวิตประจำวัน ควรขอคำแนะนำหรือความช่วยเหลือจากผู้เชี่ยวชาญด้านสุขภาพจิต หรือโทร 1323 สายด่วนสุขภาพจิตฟรี ตลอด 24 ชั่วโมง';
-                                                                                                    } else if (score >= 1.38 ){
-                                                                                                        score_msg ='คุณมีความเสี่ยงที่จะอยู่ในภาวะซึมเศร้า ควรพบผู้เชี่ยวชาญด้านสุขภาพจิตเพื่อรับการตรวจวินิจฉัยและดูแลอย่างเหมาะสม หรือเริ่มจากโทรปรึกษาสายด่วนสุขภาพจิต 1323 โทรฟรี ตลอด 24 ชั่วโมง'
-                                                                                                    } else {
-                                                                                                        score_msg ='ไม่สามารถประเมินภาวะซึมเศร้าของคุณได้ กรุณา Log in เพื่อทำแบบสอบถามอีกครั้ง หรือ ติดต่อ Admin'
-                                                                                                    }
-                                                                                                    alert(score_msg);}
+                                                                                                    
                                                                                                 else 
                                                                                                     alert('Please select Q20');
                                                                                             else    
@@ -354,6 +341,21 @@
                      $http({method: 'GET', url: '/db/addRecord?q1='+$scope.q1+'&q2='+$scope.q2+'&q3='+ $scope.q3 +'&q4='+$scope.q4+'&q5='+$scope.q5+'&q6='+$scope.q6+'&q7='+$scope.q7+'&q8='+$scope.q8+'&q9='+$scope.q9+'&q10='+$scope.q10+'&q11='+$scope.q11+'&q12='+$scope.q12+'&q13='+$scope.q13+'&q14='+$scope.q14+'&q15='+$scope.q15+'&q16='+$scope.q16+'&q17='+$scope.q17+'&q18='+$scope.q18+'&q19='+$scope.q19+'&q20='+$scope.q20+'&fName='+val }).
                         success(function(data, status) { 
                             alert('Record Added');
+                            score = (int($scope.q1)+int($scope.q2)+int($scope.q3)+int($scope.q4)+int($scope.q5)+int($scope.q6)+int($scope.q7)+int($scope.q8)+int($scope.q9)+int($scope.q10)+int($scope.q11)+int($scope.q12)+int($scope.q13)+int($scope.q14)+int($scope.q15)+int($scope.q16)+int($scope.q17)+int($scope.q18)+int($scope.q19)+int($scope.q20))/20;
+                            alert(score);
+                            score = Math.round(score * 100) / 100;
+                            if (score < 0.20) {
+                                score_msg = 'ไม่มีภาวะซึมเศร้า';
+                            } else if ((score >= 0.20 ) && (score < 1.09)) {
+                                score_msg = 'มีอารมณ์เศร้าบ้าง แต่อยู่ในระดับปกติที่คนทั่วไปก็สามารถรู้สึกเช่นนี้ได้';
+                            } else if ((score >= 1.09 ) && (score < 1.38)) {
+                                score_msg = 'มีภาวะซึมเศร้าปานกลาง ควรสังเกตอารมณ์ตนเองอย่างใกล้ชิด ถ้าความรู้สึกเช่นนี้คงอยู่ต่อเนื่องไปอีกประมาณ 2 สัปดาห์ หรือเริ่มรู้สึกว่าสภาพอารมณ์รบกวนการทำงานหรือการใช้ชีวิตประจำวัน ควรขอคำแนะนำหรือความช่วยเหลือจากผู้เชี่ยวชาญด้านสุขภาพจิต หรือโทร 1323 สายด่วนสุขภาพจิตฟรี ตลอด 24 ชั่วโมง';
+                            } else if (score >= 1.38 ){
+                                score_msg ='คุณมีความเสี่ยงที่จะอยู่ในภาวะซึมเศร้า ควรพบผู้เชี่ยวชาญด้านสุขภาพจิตเพื่อรับการตรวจวินิจฉัยและดูแลอย่างเหมาะสม หรือเริ่มจากโทรปรึกษาสายด่วนสุขภาพจิต 1323 โทรฟรี ตลอด 24 ชั่วโมง'
+                            } else {
+                                score_msg ='ไม่สามารถประเมินภาวะซึมเศร้าของคุณได้ กรุณา Log in เพื่อทำแบบสอบถามอีกครั้ง หรือ ติดต่อ Admin'
+                            }
+                            alert(score_msg);
                             //alert('/db/addRecord?fName='+$scope.fName+'&lName='+$scope.lName+'&email='+$scope.email+'&mbl='+$scope.mbl+'&q1='+$scope.q1+'&q2='+$scope.q2)
                             //$scope.getAllRec();
                             //$http({method: 'GET', url: '/thankyou'}) //error here
