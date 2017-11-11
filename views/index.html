@@ -2,6 +2,17 @@
     <head>
          <link href="css/bootstrap.min.css" rel="stylesheet"> 
          <link rel="icon"  type="image/icon"  href="Node.ico" />
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <script>
+             function newDoc(xurl) {
+                 window.location.assign(xurl)
+             }
+         </script>
+         <script type="text/javascript">
+             $(document).ready(function(){
+                 $('[data-toggle="tooltip"]').tooltip();   
+             });
+         </script>
     </head>
     <body ng-app="postgreSQL">
         <div class="container" style="margin-top:20px;"  ng-controller="postgreSQLCtrl">
@@ -38,8 +49,8 @@
                     
                     <table border=0 align="center" >
                         <tr>
-                            <td >1. ฉันรู้สึกเศร้า</td>
-                            <td width="10%"><input type="radio" ng-model="q1" value="1"  >ไม่มี</td>
+                            <td >1. ฉันรู้สึกเศร้า</td>                            
+                            <td width="10%"><input type="radio" ng-model="q1" value="1" data-toggle="tooltip" title="ไม่เศร้าเลย"  data-placement="left">ไม่มี</td>
                             <td width="10%"><input type="radio" ng-model="q1" value="2">เล็กน้อย</td>
                             <td width="10%"><input type="radio" ng-model="q1" value="3">ปานกลาง</td>
                             <td width="10%"><input type="radio" ng-model="q1" value="4">ค่อนข้างมาก</td>
@@ -199,7 +210,7 @@
                         </tr>
                        
                         <tr height="100">
-                            <td colspan="6" align="center"><button ng-click="addRecord()" id="btnAdd" name="btnAdd" class="btn btn-danger">บันทึก</button></td>
+                            <td colspan="6" align="center"><button ng-click="verifydata()" id="btnAdd" name="btnAdd" class="btn btn-danger">บันทึก</button></td>
                         </tr>
                        
                     </table>               
@@ -256,15 +267,79 @@
                       }); 
                 } 
 
-
+                
+                $scope.verifydata = function(){ 
+                    //alert($scope.q1);
+                    if ($scope.q1!='') 
+                        if ($scope.q2!='')
+                            if ($scope.q3!='')
+                                if ($scope.q4!='')
+                                    if ($scope.q5!='')
+                                        if ($scope.q6!='')
+                                            if ($scope.q7!='')
+                                                if ($scope.q8!='')
+                                                    if ($scope.q9!='')
+                                                        if ($scope.q10!='')
+                                                            if ($scope.q11!='')
+                                                                if ($scope.q12!='')
+                                                                    if($scope.q13!='')
+                                                                        if($scope.q14!='')
+                                                                            if ($scope.q15!='')
+                                                                                if ($scope.q16!='')
+                                                                                    if ($scope.q17!='')
+                                                                                        if ($scope.q18!='')
+                                                                                            if ($scope.q19!='')
+                                                                                                if ($scope.q20!='')
+                                                                                                    $scope.addRecord(); 
+                                                                                                else 
+                                                                                                    alert('Please select Q20');
+                                                                                            else    
+                                                                                                alert('Please select Q19');
+                                                                                        else 
+                                                                                            alert('Please select Q18');
+                                                                                    else 
+                                                                                        alert('Please select Q17');
+                                                                                else 
+                                                                                    alert('Please select Q16');
+                                                                            else 
+                                                                                alert('Please select Q15');
+                                                                        else 
+                                                                            alert('Please select Q14');
+                                                                    else 
+                                                                        alert('Please select Q13');
+                                                                else 
+                                                                    alert('Please select Q12');
+                                                            else 
+                                                                alert('Please select Q11');
+                                                        else 
+                                                            alert('Please select Q10');
+                                                    else 
+                                                        alert('Please select Q9');
+                                                else 
+                                                    alert('Please select Q8');
+                                            else 
+                                                alert('Please select Q7');
+                                        else 
+                                            alert('Please select Q6');
+                                    else 
+                                        alert('Please select Q5');
+                                else 
+                                    alert('Please select Q4');
+                            else 
+                                alert('Please select Q3');
+                        else 
+                            alert('Please select Q2');
+                    else 
+                        alert('Please select Q1');
            
+                }
                 
                 
                 $scope.addRecord = function(){ 
-                
+                                   
                      $http({method: 'GET', url: '/db/addRecord?q1='+$scope.q1+'&q2='+$scope.q2+'&q3='+ $scope.q3 +'&q4='+$scope.q4+'&q5='+$scope.q5+'&q6='+$scope.q6+'&q7='+$scope.q7+'&q8='+$scope.q8+'&q9='+$scope.q9+'&q10='+$scope.q10+'&q11='+$scope.q11+'&q12='+$scope.q12+'&q13='+$scope.q13+'&q14='+$scope.q14+'&q15='+$scope.q15+'&q16='+$scope.q16+'&q17='+$scope.q17+'&q18='+$scope.q18+'&q19='+$scope.q19+'&q20='+$scope.q20+'&fName='+val }).
                         success(function(data, status) { 
-                            alert('Record Added-Why not forward');
+                            alert('Record Added');
                             //alert('/db/addRecord?fName='+$scope.fName+'&lName='+$scope.lName+'&email='+$scope.email+'&mbl='+$scope.mbl+'&q1='+$scope.q1+'&q2='+$scope.q2)
                             //$scope.getAllRec();
                             //$http({method: 'GET', url: '/thankyou'}) //error here
@@ -298,11 +373,7 @@
             }]);
  
         </script>
-        <script>
-            function newDoc(xurl) {
-                window.location.assign(xurl)
-            }
-        </script>
+        
     </body>
     
 </html>

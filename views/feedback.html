@@ -287,7 +287,8 @@
                 
                 <div class="row clearfix" style="margin-bottom:10px;" align="center">
                     <div class="col-md-8">
-                        <button ng-click="addRecord()" id="btnAdd" name="btnAdd" class="btn btn-success">ส่ง Feedback <span class="glyphicon glyphicon-send"></span></button>
+                        <button ng-click="verifydata()" id="btnAdd" name="btnAdd" class="btn btn-danger">ส่ง Feedback <span class="glyphicon glyphicon-send"></span></button>
+                        
                     </div>
                 </div>
                 
@@ -303,7 +304,7 @@
             myApp.controller('postgreSQLCtrl', ['$scope' ,'$http','$window', '$location',  function($scope,$http) {
                 $scope.val1 = 'This is temp Val' ;  
                 $scope.fName = '';
-            /*  $scope.sex= '';
+                $scope.sex= '';
                 $scope.age= '';
                 $scope.edu= '';
                 $scope.job= '';
@@ -335,8 +336,71 @@
                          $scope.dataset = data || "Request failed "; 
                      }); 
                } 
-               */  
+                 
+               $scope.verifydata = function(){ 
+                    //alert($scope.job);
+                    if ($scope.sex!='') 
+                        if ($scope.age!='')
+                            if ($scope.edu!='')
+                                if ($scope.job!='')
+                                    if ($scope.email!='')
+                                        if ($scope.qcb1!='')
+                                            if ($scope.qcb2!='')
+                                                if ($scope.qcb3!='')
+                                                    if ($scope.qcb4!='')
+                                                        if ($scope.goodcb!='')
+                                                            if ($scope.badcb!='')
+                                                                if ($scope.qq1!='')
+                                                                    if($scope.qq2!='')
+                                                                        if($scope.qq3!='')
+                                                                            if ($scope.qq4!='')
+                                                                                if ($scope.goodq!='')
+                                                                                    if ($scope.badq!='')
+                                                                                        if ($scope.qa1!='')
+                                                                                            if ($scope.qa2!='')
+                                                                                                $scope.addRecord(); 
+                                                                                            else    
+                                                                                                alert('โปรดประเมินภาพรวมให้ครบ');
+                                                                                        else 
+                                                                                            alert('โปรดประเมินภาพรวมให้ครบ');
+                                                                                    else 
+                                                                                        alert('โปรดประเมินแบบสอบถาม TMHQ ให้ครบ');
+                                                                                else 
+                                                                                    alert('โปรดประเมินแบบสอบถาม TMHQ ให้ครบ');
+                                                                            else 
+                                                                                alert('โปรดประเมินแบบสอบถาม TMHQ ให้ครบ');
+                                                                        else 
+                                                                            alert('โปรดประเมินแบบสอบถาม TMHQ ให้ครบ');
+                                                                    else 
+                                                                        alert('โปรดประเมินแบบสอบถาม TMHQ ให้ครบ');
+                                                                else 
+                                                                    alert('โปรดประเมินแบบสอบถาม TMHQ ให้ครบ');
+                                                            else 
+                                                                alert('โปรดประเมิน Jubjai Chatbot ให้ครบ');
+                                                        else 
+                                                            alert('โปรดประเมิน Jubjai Chatbot ให้ครบ');
+                                                    else 
+                                                        alert('โปรดประเมิน Jubjai Chatbot ให้ครบ');
+                                                else 
+                                                    alert('โปรดประเมิน Jubjai Chatbot ให้ครบ');
+                                            else 
+                                                alert('โปรดประเมิน Jubjai Chatbot ให้ครบ');
+                                        else 
+                                            alert('โปรดประเมิน Jubjai Chatbot ให้ครบ');
+                                    else 
+                                        alert('โปรดระบุข้อมูลส่วนตัว ให้ครบ');
+                                else 
+                                    alert('โปรดระบุข้อมูลส่วนตัว ให้ครบ');
+                            else 
+                                alert('โปรดระบุข้อมูลส่วนตัว ให้ครบ');
+                        else 
+                            alert('โปรดระบุข้อมูลส่วนตัว ให้ครบ');
+                    else 
+                        alert('โปรดระบุข้อมูลส่วนตัว ให้ครบ');
+           
+                }
                 
+
                 $scope.addRecord = function(){ 
                     var url = '/db/addFeedback';
                     //var xdata = {age: $scope.age, fName: val};
