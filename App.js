@@ -88,7 +88,9 @@ app.post('/db/addFeedback', function (req, res, next) {
     console.log(JSON.stringify(post_data));
     console.log(post_data.fName);
     var pg = require('pg');
-    var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+    //postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db
+    //var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";
+    var conString = "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";
     pg.connect(conString, function (err, client, done) {
       if (err) {
         // pass the error to the express error handler
@@ -121,7 +123,7 @@ app.post('/db/addFeedback', function (req, res, next) {
   var post_data = req.body;
   var pg = require('pg');  
   
-var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";  
+var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";  
   //var conString = process.env.DATABASE_URL;
   var client = new pg.Client(conString);
 

@@ -4,7 +4,8 @@ module.exports = {
       
         //You can run command "heroku config" to see what is Database URL from Heroku belt
       
-        var conString = process.env.DATABASE_URL || "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+        //var conString = process.env.DATABASE_URL || "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+        var conString = "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";
         var client = new pg.Client(conString);
 
         client.connect();
@@ -28,7 +29,8 @@ module.exports = {
     addRecord : function(req, res){
         var pg = require('pg');  
         
-        var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+        //var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+        var conString = "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";
         var client = new pg.Client(conString);
 
         client.connect();
@@ -78,8 +80,9 @@ module.exports = {
         var post_data = req.body;
         var pg = require('pg');  
         
-        var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+        //var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
         //var conString = process.env.DATABASE_URL;
+        var conString = "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";
         var client = new pg.Client(conString);
 
         client.connect();
@@ -102,7 +105,8 @@ module.exports = {
      delRecord : function(req, res){
         var pg = require('pg');   
         
-        var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+        //var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+        var conString = "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";
         var client = new pg.Client(conString);
 
         client.connect();
@@ -119,8 +123,8 @@ module.exports = {
     
     createTable : function(req, res){
         var pg = require('pg');   
-        
-        var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+        var conString = "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";
+        //var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
         var client = new pg.Client(conString);
 
         client.connect();
@@ -162,7 +166,8 @@ module.exports = {
     dropTable : function(req, res){
         var pg = require('pg');   
         
-        var conString = process.env.DATABASE_URL || "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+        //var conString = process.env.DATABASE_URL || "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+        var conString = "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";
         var client = new pg.Client(conString);
 
         client.connect();
