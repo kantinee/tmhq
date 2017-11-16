@@ -29,17 +29,25 @@
                         </h1>
                         <h3>แบบวัดสุขภาพจิตในคนไทย ด้านภาวะซึมเศร้า (ในรูปแบบ Questionnaire)</h3>
                         <p><br /><br />
-                            <h4>"ในช่วง 1 เดือนที่ผ่านมา" ว่าท่านมีอาการดังต่อไปนี้หรือไม่</h4>
-                            <h5>-------------------------------------------------------------------------------------------------------------------------------------------------------------
-                            <br/><b>ไม่มี</b>                 หมายถึง    ท่านไม่เคยมีหรือไม่เคยรู้สึกเลยในตลอดช่วงระยะเวลา 1 เดือน
-                            <br/><b>เล็กน้อย</b>              หมายถึง    ท่านเคยมีหรือเคยรู้สึก คือประมาณครั้งหรือสองครั้งในช่วง 1 เดือน
-                            <br/><b>ปานกลาง</b>             หมายถึง    ท่านเคยมีหรือเคยรู้สึกพอประมาณ คือประมาณ สัปดาห์ละครั้ง
-                            <br/><b>ค่อนข้างมาก</b>           หมายถึง    ท่านเคยมีหรือเคยรู้สึกหลายๆ ครั้งใน 1 สัปดาห์
-                            <br/><b>มาก</b>                 หมายถึง    ท่านเคยมีหรือเคยรู้สึกบ่อยมาก คือเกือบทุกวัน
-                            <br/>-------------------------------------------------------------------------------------------------------------------------------------------------------------
-                            </h5>
-                           
-                            <h5><i>** ใช้เวลาประมาณ 5 นาที ข้อมูลทุกอย่างจะถูกเก็บเป็นความลับ **</i></h5>
+                            <blockquote>
+                                    <p><mark>"ในช่วง 1 เดือนที่ผ่านมา"</mark>ท่านมีอาการดังต่อไปนี้หรือไม่</p>
+                                    <dl class="dl-horizontal">
+                                            <dt>ไม่มี</dt>
+                                            <dd>ท่านไม่เคยมีหรือไม่เคยรู้สึกเลยในตลอดช่วงระยะเวลา 1 เดือน</dd>
+                                            <dt>เล็กน้อย</dt>
+                                            <dd>ท่านเคยมีหรือเคยรู้สึก คือประมาณครั้งหรือสองครั้งในช่วง 1 เดือน</dd>
+                                            <dt>ปานกลาง</dt>
+                                            <dd>ท่านเคยมีหรือเคยรู้สึกพอประมาณ คือประมาณ สัปดาห์ละครั้ง</dd>
+                                            <dt>ค่อนข้างมาก</dt>
+                                            <dd>ท่านเคยมีหรือเคยรู้สึกหลายๆ ครั้งใน 1 สัปดาห์</dd>
+                                            <dt>มาก</dt>
+                                            <dd>ท่านเคยมีหรือเคยรู้สึกบ่อยมาก คือเกือบทุกวัน</dd>
+                                    </dl>
+                                                    
+                                    <footer><cite title="Source Title">ทีมงาน JubJai</cite></footer>
+                                  </blockquote>
+                            
+                                  <h5><i>ใช้เวลาประมาณ 5 นาที ข้อมูลทุกอย่างจะถูกเก็บเป็นความลับ</i></h5>                            
                             <h5><i>หมายเหตุ : โครงการนี้ได้รับการสนับสนุนจากทุนInnovation_Hub เพื่อการพัฒนา Aging Society ตามนโยบายประเทศไทย 4.0 ภายใต้การดูแลของ ม.มหิดล</i></h5>
 
                             <a class="pull-right" href="https://tmhq-jubjai.herokuapp.com/">ทีมงาน Jubjai</a> 
@@ -52,7 +60,7 @@
             <div class="row clearfix" style="margin-bottom:10px;">
                 <div class="controls form-inline form-group">
                     
-                    <table  class="table table-hover" >
+                    <table  class="table table-hover "  >
                         <tr>
                             <td>1. ฉันรู้สึกเศร้า</td>                            
                             <td width="10%"><input type="radio" ng-model="q1" value="0" data-toggle="tooltip" title="ไม่เศร้าเลย"  data-placement="left">ไม่มี</td>
@@ -77,7 +85,7 @@
                             <td><input type="radio" ng-model="q3" value="3">ค่อนข้างมาก</td>
                             <td><input type="radio" ng-model="q3" value="4">มาก</td>
                         </tr>
-                        <tr class="danger">
+                        <tr class="success">
                             <td>4. ฉันรู้สึกไม่สนุกกับสิ่งต่างๆ เหมือนเช่นเคย</td>
                             <td><input type="radio" ng-model="q4" value="0">ไม่มี</td>
                             <td><input type="radio" ng-model="q4" value="1">เล็กน้อย</td>
@@ -93,7 +101,7 @@
                                 <td><input type="radio" ng-model="q5" value="3">ค่อนข้างมาก</td>
                                 <td><input type="radio" ng-model="q5" value="4">มาก</td>
                         </tr>
-                        <tr class="warning">
+                        <tr class="success">
                                 <td>6. ฉันรู้สึกเบื่อหน่ายและท้อแท้</td>
                                 <td><input type="radio" ng-model="q6" value="0">ไม่มี</td>
                                 <td><input type="radio" ng-model="q6" value="1">เล็กน้อย</td>
@@ -109,7 +117,7 @@
                                 <td><input type="radio" ng-model="q7" value="3">ค่อนข้างมาก</td>
                                 <td><input type="radio" ng-model="q7" value="4">มาก</td>
                             </tr>
-                       <tr class="warning">
+                       <tr class="success">
                             <td>8. การนอนของฉันผิดปกติและรบกวนฉัน</td>
                             <td><input type="radio" ng-model="q8" value="0">ไม่มี</td>
                             <td><input type="radio" ng-model="q8" value="1">เล็กน้อย</td>
@@ -125,7 +133,7 @@
                                 <td><input type="radio" ng-model="q9" value="3">ค่อนข้างมาก</td>
                                 <td><input type="radio" ng-model="q9" value="4">มาก</td>
                             </tr>
-                       <tr class="warning">
+                       <tr class="success">
                             <td>10. ฉันรู้สึกหมดกำลังใจ</td>
                             <td><input type="radio" ng-model="q10" value="0">ไม่มี</td>
                             <td><input type="radio" ng-model="q10" value="1">เล็กน้อย</td>
@@ -141,7 +149,7 @@
                             <td><input type="radio" ng-model="q11" value="3">ค่อนข้างมาก</td>
                             <td><input type="radio" ng-model="q11" value="4">มาก</td>
                         </tr>
-                       <tr class="warning">
+                       <tr class="success">
                             <td>12. ฉันรู้สึกผิดเกือบตลอดเวลา</td>
                             <td><input type="radio" ng-model="q12" value="0">ไม่มี</td>
                             <td><input type="radio" ng-model="q12" value="1">เล็กน้อย</td>
@@ -157,7 +165,7 @@
                             <td><input type="radio" ng-model="q13" value="3">ค่อนข้างมาก</td>
                             <td><input type="radio" ng-model="q13" value="4">มาก</td>
                         </tr>
-                       <tr class="warning">
+                       <tr class="success">
                             <td>14. ฉันรู้สึกด้อยเมื่อเปรียบเทียบกับคนอื่น</td>
                             <td><input type="radio" ng-model="q14" value="0">ไม่มี</td>
                             <td><input type="radio" ng-model="q14" value="1">เล็กน้อย</td>
@@ -173,7 +181,7 @@
                             <td><input type="radio" ng-model="q15" value="3">ค่อนข้างมาก</td>
                             <td><input type="radio" ng-model="q15" value="4">มาก</td>
                         </tr>
-                       <tr class="warning">
+                       <tr class="success">
                             <td>16. ฉันรู้สึกไม่มีความสุขเลย</td>
                             <td><input type="radio" ng-model="q16" value="0">ไม่มี</td>
                             <td><input type="radio" ng-model="q16" value="1">เล็กน้อย</td>
@@ -189,7 +197,7 @@
                             <td><input type="radio" ng-model="q17" value="3">ค่อนข้างมาก</td>
                             <td><input type="radio" ng-model="q17" value="4">มาก</td>
                         </tr>
-                       <tr class="warning">
+                       <tr class="success">
                             <td>18. อนาคตของฉันมืดมน</td>
                             <td><input type="radio" ng-model="q18" value="0">ไม่มี</td>
                             <td><input type="radio" ng-model="q18" value="1">เล็กน้อย</td>
@@ -205,7 +213,7 @@
                             <td><input type="radio" ng-model="q19" value="3">ค่อนข้างมาก</td>
                             <td><input type="radio" ng-model="q19" value="4">มาก</td>
                         </tr>
-                       <tr class="warning">
+                       <tr class="success">
                             <td>20. ความตายเป็นทางออกที่ดีที่สุดสำหรับฉัน</td>
                             <td><input type="radio" ng-model="q20" value="0">ไม่มี</td>
                             <td><input type="radio" ng-model="q20" value="1">เล็กน้อย</td>
