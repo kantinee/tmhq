@@ -71,10 +71,11 @@ app.get('/db/addRecord', function(req,res){
     //var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
     var conString = "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";
     var client = new pg.Client(conString);
-
+    var fbname ='';
+    fbname =  req.query.fName.replace(/'/g, "''"); 
     client.connect();
     var query = client.query("insert into tmhq (fbid,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,q20) "+ 
-                            "values ('''"+req.query.fName+"''','"+
+                            "values ('"+fbname+"','"+
                             req.query.q1+"','"+
                             req.query.q2+"','"+
                             req.query.q3+"','"+
