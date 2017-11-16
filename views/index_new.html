@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>TMHQ</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="logo"><a href="index.html">Urban <span>by TEMPLATED</span></a></div>
+			<a href="#menu">Menu</a>
+		</header>
+
+		<!-- Main -->
+        <div id="main">
+			<section class="wrapper style1">
+				<div class="inner">
+					<header class="align-center">
+						<h1>TMHQ</h1>
+						<p>แบบวัดสุขภาพจิตในคนไทย ด้านภาวะซึมเศร้า (ในรูปแบบ Questionnaire)</p>
+					</header>
+
+					<!-- Content -->
+					<!-- Blockquote -->
+					<h3>ในช่วง 1 เดือนที่ผ่านมา ท่านมีอาการดังต่อไปนี้้หรือไม่ </h3>
+					<blockquote >
+						<code>ไม่มี </code>	หมายถึง ท่าน <u>ไม่เคย</u>มีหรือไม่เคยรู้สึกเลยในตลอดช่วงระยะเวลา 1 เดือน<br/>
+						<code>เล็กน้อย </code>	หมายถึง ท่านเคยมีหรือเคยรู้สึก คือประมาณ <u>ครั้งหรือสองครั้ง</u> ในช่วง 1 เดือน<br/>
+						<code>ปานกลาง</code>	 หมายถึง ท่านเคยมีหรือเคยรู้สึกพอประมาณ คือประมาณ <u>สัปดาห์ละครั้ง</u><br/>
+						<code>ค่อนข้างมาก</code>หมายถึง ท่านเคยมีหรือเคยรู้สึก <u>หลายๆ ครั้งใน 1 สัปดาห์</u><br/>
+						<code>มาก </code> หมายถึง ท่านเคยมีหรือเคยรู้สึกบ่อยมาก คือ <u>เกือบทุกวัน</u> <br/>
+					</blockquote>
+    				<hr class="major" />
+					<!-- Elements -->
+					<h4 id="elements"></h4>
+						<!-- Form -->
+						<form>								
+							<div class="row">
+    							<div class="6u 12u$(small)">
+	    							<h3>1. ฉันรู้สึกเศร้า</h3>
+								</div>
+								<div class="6u$ 12u$(small)">
+									<div class="row uniform">
+										<div class="2u">
+											<input type="radio" id="q10" name="q1"  ng-model="q1" value="0">
+											<label for="q10">ไม่มี</label>
+										</div>
+										<div class="2u">
+											<input type="radio" id="q11" name="q1" ng-model="q1" value="1">
+											<label for="q11">เล็กน้อย</label>
+										</div>
+										<div class="2u">
+											<input type="radio" id="q12" name="q1" ng-model="q1" value="2">
+											<label for="q12">ปานกลาง</label>
+										</div>
+										<div class="2u">
+											<input type="radio" id="q13"  name="q1" ng-model="q1" value="3">
+											<label for="q13">ค่อนข้างมาก</label>
+										</div>
+										<div class="2u$">
+											<input type="radio" id="q14"  name="q1" ng-model="q1" value="4">
+											<label for="q14">มาก</label>
+										</div>
+		                			</div>
+								</div>
+							</div>
+							<hr class="major" />
+							<div class="row">
+								<div class="6u 12u$(small)">
+									<h3>2. ฉันรู้สึกไม่มีสมาธิกับงานหรือสิ่งต่างๆที่ทำในชีวิตประจำวัน</h3>
+								</div>
+								<div class="6u$ 12u$(small)">
+									<div class="row uniform">
+										<div class="2u">
+    										<input type="radio" id="q20" name="q2"  ng-model="q2" value="0">
+											<label for="q20">ไม่มี</label>
+										</div>
+									<div class="2u">
+										<input type="radio" id="q21" name="q2" ng-model="q2" value="1">
+										<label for="q21">เล็กน้อย</label>
+	    							</div>
+		    						<div class="2u">
+										<input type="radio" id="q22" name="q2" ng-model="q2" value="2">
+										<label for="q22">ปานกลาง</label>
+									</div>
+									<div class="2u">
+										<input type="radio" id="q23"  name="q2" ng-model="q2" value="3">
+										<label for="q23">ค่อนข้างมาก</label>
+									</div>
+									<div class="2u$">
+										<input type="radio" id="q24"  name="q2" ng-model="q2" value="4">
+										<label for="q24">มาก</label>
+									</div>
+								</div>
+							</div>
+							<hr class="major" />
+							<!-- Break -->
+							<div class="12u$">
+								<ul class="actions">
+									<li><input type="button" value="วิเคราะห์ TMHQ " ng-click="verifydata()"  /></li>
+								</ul>
+							</div>
+                        </form>
+				</div>
+			</section>
+		</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					<ul class="icons">
+						
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						
+					</ul>
+					<p>&copy;PorDeeKum.AI  All rights reserved. </p>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/angular.min.js"></script>
+			<script> 
+                    var myApp = angular.module('postgreSQL',[ ]);  
+                    myApp.controller('postgreSQLCtrl', ['$scope' ,'$http',  function($scope,$http) {
+                        $scope.verifydata = function(){ 
+                            alert("ying");
+                        }
+                    }]);
+            </script>
+	</body>
+</html>
