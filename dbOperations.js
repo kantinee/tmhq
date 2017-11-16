@@ -10,7 +10,7 @@ module.exports = {
 
         client.connect();
 
-        var query = client.query("select * from employee");
+        var query = client.query("select * from tmhq");
 
         query.on("row", function (row, result) { 
             result.addRow(row); 
@@ -100,87 +100,9 @@ module.exports = {
         }
     );
         
-    },
-       
-     delRecord : function(req, res){
-        var pg = require('pg');   
-        
-        //var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
-        var conString = "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";
-        var client = new pg.Client(conString);
-
-        client.connect();
-         
-        var query = client.query( "Delete from employee Where id ="+req.query.id);
-    
-        query.on("end", function (result) {          
-            client.end(); 
-            res.write('Success');
-            res.end();  
-        });
-
-    },
-    
-    createTable : function(req, res){
-        var pg = require('pg');   
-        var conString = "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";
-        //var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
-        var client = new pg.Client(conString);
-
-        client.connect();
-         
-        var query = client.query( "CREATE TABLE tmhq"+
-                                    "("+
-                                    "fbid character varying(50),"+
-                                    "q1 character varying(1),"+
-                                    "q2 character varying(1),"+
-                                    "q3 character varying(1),"+
-                                    "q4 character varying(1),"+
-                                    "q5 character varying(1),"+
-                                    "q6 character varying(1),"+
-                                    "q7 character varying(1),"+
-                                    "q8 character varying(1),"+
-                                    "q9 character varying(1),"+
-                                    "q10 character varying(1),"+
-                                    "q11 character varying(1),"+
-                                    "q12 character varying(1),"+
-                                    "q13 character varying(1),"+
-                                    "q14 character varying(1),"+
-                                    "q15 character varying(1),"+
-                                    "q16 character varying(1),"+
-                                    "q17 character varying(1),"+
-                                    "q18 character varying(1),"+
-                                    "q19 character varying(1),"+
-                                    "q20 character varying(1),"+
-                                    "id serial NOT NULL"+
-                                  ")");
-    
-        query.on("end", function (result) {          
-            client.end(); 
-            res.write('Table Schema Created');
-            res.end();  
-        });
-
-    },
-    
-    dropTable : function(req, res){
-        var pg = require('pg');   
-        
-        //var conString = process.env.DATABASE_URL || "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
-        var conString = "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";
-        var client = new pg.Client(conString);
-
-        client.connect();
-         
-        var query = client.query( "Drop TABLE employee");
-    
-        query.on("end", function (result) {          
-            client.end(); 
-            res.write('Table Schema Deleted');
-            res.end();  
-        });
-
     }
+    
+    
 
     
 };
