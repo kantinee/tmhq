@@ -65,8 +65,45 @@ app.get('/db/readRecords', function(req,res){
 });
 
 app.get('/db/addRecord', function(req,res){
-    dbOperations.addRecord(req,res);
-        
+    //dbOperations.addRecord(req,res);
+    var pg = require('pg');  
+    
+    //var conString = process.env.DATABASE_URL ||  "postgres://postgres:chatbot@localhost:5432/jubjai-bot-db";
+    var conString = "postgres://postgres:chatbot@1.179.246.105:5432/jubjai-bot-db";
+    var client = new pg.Client(conString);
+
+    client.connect();
+    var query = client.query("insert into tmhq (fbid,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,q20) "+ 
+                            "values ('"+req.query.fName+"','"+
+                            req.query.q1+"','"+
+                            req.query.q2+"','"+
+                            req.query.q3+"','"+
+                            req.query.q4+"','"+
+                            req.query.q5+"','"+
+                            req.query.q6+"','"+
+                            req.query.q7+"','"+
+                            req.query.q8+"','"+
+                            req.query.q9+"','"+
+                            req.query.q10+"','"+
+                            req.query.q11+"','"+
+                            req.query.q12+"','"+
+                            req.query.q13+"','"+
+                            req.query.q14+"','"+
+                            req.query.q15+"','"+
+                            req.query.q16+"','"+
+                            req.query.q17+"','"+
+                            req.query.q18+"','"+
+                            req.query.q19+"','"+
+                            req.query.q20+"')");
+                            
+
+    query.on("end", function (result) {          
+        client.end(); 
+        res.write('Success');
+        res.end(); 
+                         
+         
+    });    
    
 });
 /*
