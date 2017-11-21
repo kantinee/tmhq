@@ -478,7 +478,7 @@
         </script>
         <script>
             function newDoc() {
-                window.location.assign("http://1.179.246.105/jubjai/landingPage/")
+                window.location.assign("http://1.179.246.105:8080/jubjai/landingPage/")
             }
         </script>
             
